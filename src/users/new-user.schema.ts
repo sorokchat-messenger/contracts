@@ -1,22 +1,24 @@
-import { IsDefined, IsNotEmpty, IsString } from "class-validator";
-import { classToZod, z } from "@hiscojs/zodify";
 import { UserCodes } from "./codes.js";
+import z from "zod";
 
-export class NewUserDto {
-  @IsString()
-  @IsDefined({ message: UserCodes.LOGIN.UNDEFINED })
-  @IsNotEmpty({ message: UserCodes.LOGIN.EMPTY })
-  public login!: string;
-
-  @IsString()
-  @IsDefined({ message: UserCodes.PASSWORD.UNDEFINED })
-  @IsNotEmpty({ message: UserCodes.PASSWORD.EMPTY })
-  public password!: string;
-
-  public displayName?: string;
-}
-
-type InferZodSchema<T extends z.ZodType> = z.infer<T>;
-
-export const NewUserSchema = classToZod(NewUserDto);
-export type NewUserPayload = InferZodSchema<typeof NewUserSchema>;
+export const NewUserSchema = z.object({
+  login: z
+    .string()
+    .nonempty({ message: UserCodes.LOGIN.EMPTY })
+    .nonoptional({ message: UserCodes.LOGIN.UNDEFINED }),
+  password: z
+    .string()
+    .min(UserCodes.PASSWORD.MIN_LENGTH.VALUE, {
+      message: UserCodes.PASSWORD.MIN_LENGTH.CODE,
+    })
+    .max(UserCodes.PASSWORD.MAX_LENGTH.VALUE, {
+      message: UserCodes.PASSWORD.MAX_LENGTH.CODE,
+    })
+    .nonempty({ message: UserCodes.PASSWORD.EMPTY })
+    .nonoptional({ message: UserCodes.PASSWORD.UNDEFINED }),
+  displayName: z
+    .string()
+    .nonempty({ message: UserCodes.DISPLAY_NAME.EMPTY })
+    .optional(),
+});
+export type NewUserPayload = z.infer<typeof NewUserSchema>;

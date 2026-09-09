@@ -19,11 +19,11 @@ export const UserCodes = {
     EMPTY: `${ERROR_PASSWORD}.empty`,
     MIN_LENGTH: {
       VALUE: MIN_LENGTH,
-      code: `${ERROR_PASSWORD}.min-length`,
+      CODE: `${ERROR_PASSWORD}.min-length`,
     },
     MAX_LENGTH: {
       VALUE: MAX_LENGTH,
-      code: `${ERROR_PASSWORD}.max-length`,
+      CODE: `${ERROR_PASSWORD}.max-length`,
     },
   },
   DISPLAY_NAME: {
