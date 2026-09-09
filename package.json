@@ -37,6 +37,7 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@asteasolutions/zod-to-openapi": "^9.1.0",
     "@sorokchat-messenger/core": "^1.0.0",
     "prettier": "^3.9.6"
   },
