@@ -1,6 +1,6 @@
 {
   "name": "@sorokchat-messenger/contracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Frontend and backend contracts",
   "keywords": [
     "frontend",
@@ -24,7 +24,9 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
