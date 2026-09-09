@@ -31,7 +31,7 @@ jobs:
         run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
 
       - name: Build package
-        run: bun build
+        run: npm run build
       
       - name: Publish to npm
         run: npm publish
