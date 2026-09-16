@@ -5,5 +5,5 @@ export const RegisterSchema = NewUserSchema.pick({
   login: true,
   password: true,
   displayName: true,
-});
+}).meta({ id: "RegisterSchema" });
 export type RegisterPayload = z.infer<typeof RegisterSchema>;
