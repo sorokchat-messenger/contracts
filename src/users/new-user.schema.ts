@@ -7,7 +7,10 @@ export const NewUserSchema = z
       .string()
       .nonempty({ message: UserCodes.LOGIN.EMPTY })
       .nonoptional({ message: UserCodes.LOGIN.UNDEFINED })
-      .meta({ example: "andrey_sorokovsky" }),
+      .meta({
+        example: "andrey_sorokovsky",
+        description: "Унікальне ім'я користувача",
+      }),
     password: z
       .string()
       .min(UserCodes.PASSWORD.MIN_LENGTH.VALUE, {
@@ -18,12 +21,15 @@ export const NewUserSchema = z
       })
       .nonempty({ message: UserCodes.PASSWORD.EMPTY })
       .nonoptional({ message: UserCodes.PASSWORD.UNDEFINED })
-      .meta({ example: "<PASSWORD>" }),
+      .meta({ example: "<PASSWORD>", description: "Пароль користувача" }),
     displayName: z
       .string()
       .nonempty({ message: UserCodes.DISPLAY_NAME.EMPTY })
       .optional()
-      .meta({ example: "Сороковський Андрій" }),
+      .meta({
+        example: "Сороковський Андрій",
+        description: "Видиме ім'я користувача",
+      }),
   })
-  .meta({ id: "NewUserSchema" });
+  .meta({ id: "NewUserSchema", description: "Данні нового користувача" });
 export type NewUserPayload = z.infer<typeof NewUserSchema>;
