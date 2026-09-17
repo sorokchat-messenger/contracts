@@ -1,3 +1,4 @@
+import { ChatRole } from "../chats/index.js";
 import { Role } from "../users/index.js";
 
 export class RoleHierarchy {
@@ -52,5 +53,12 @@ export const ROLE_HIERARCHY = new RoleHierarchy(
     [Role.USER, []],
     [Role.PRO, [Role.USER]],
     [Role.ADMIN, [Role.PRO]],
+  ]),
+);
+
+export const CHAT_ROLE_HIERARCHY = new RoleHierarchy(
+  new Map<string, string[]>([
+    [ChatRole.MEMBER, []],
+    [ChatRole.ADMIN, [ChatRole.MEMBER]],
   ]),
 );
