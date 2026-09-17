@@ -1,3 +1,5 @@
+import { Role } from "../users/index.js";
+
 export class RoleHierarchy {
   private readonly map: Map<string, string[]>;
   private readonly cache: Map<string, boolean>;
@@ -44,3 +46,11 @@ export class RoleHierarchy {
     return `${current}:${needed}`;
   }
 }
+
+export const ROLE_HIERARCHY = new RoleHierarchy(
+  new Map<string, string[]>([
+    [Role.USER, []],
+    [Role.PRO, [Role.USER]],
+    [Role.ADMIN, [Role.PRO]],
+  ]),
+);
