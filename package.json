@@ -34,14 +34,18 @@
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
   },
   "devDependencies": {
     "@sorokchat-messenger/core": "^1.0.0",
     "prettier": "^3.9.6"
   },
   "dependencies": {
+    "@vitest/coverage-v8": "^5.0.1",
     "reflect-metadata": "^0.2.2",
+    "vitest": "^5.0.1",
     "zod": "^4.5.4"
   }
 }

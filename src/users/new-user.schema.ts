@@ -4,15 +4,14 @@ import z from "zod";
 export const NewUserSchema = z
   .object({
     login: z
-      .string()
+      .string({ message: UserCodes.LOGIN.UNDEFINED })
       .nonempty({ message: UserCodes.LOGIN.EMPTY })
-      .nonoptional({ message: UserCodes.LOGIN.UNDEFINED })
       .meta({
         example: "andrey_sorokovsky",
         description: "Унікальне ім'я користувача",
       }),
     password: z
-      .string()
+      .string({ message: UserCodes.PASSWORD.UNDEFINED })
       .min(UserCodes.PASSWORD.MIN_LENGTH.VALUE, {
         message: UserCodes.PASSWORD.MIN_LENGTH.CODE,
       })
@@ -20,10 +19,9 @@ export const NewUserSchema = z
         message: UserCodes.PASSWORD.MAX_LENGTH.CODE,
       })
       .nonempty({ message: UserCodes.PASSWORD.EMPTY })
-      .nonoptional({ message: UserCodes.PASSWORD.UNDEFINED })
       .meta({ example: "<PASSWORD>", description: "Пароль користувача" }),
     displayName: z
-      .string()
+      .string({ message: UserCodes.DISPLAY_NAME.EMPTY })
       .nonempty({ message: UserCodes.DISPLAY_NAME.EMPTY })
       .optional()
       .meta({
