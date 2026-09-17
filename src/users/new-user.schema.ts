@@ -29,5 +29,5 @@ export const NewUserSchema = z
         description: "Видиме ім'я користувача",
       }),
   })
-  .meta({ id: "NewUserSchema", description: "Данні нового користувача" });
+  .meta({ id: "NewUserPayload", description: "Данні нового користувача" });
 export type NewUserPayload = z.infer<typeof NewUserSchema>;

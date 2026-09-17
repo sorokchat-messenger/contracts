@@ -6,7 +6,7 @@ export const RegisterSchema = NewUserSchema.pick({
   password: true,
   displayName: true,
 }).meta({
-  id: "RegisterSchema",
+  id: "RegisterPayload",
   description: "Данні для реєстрації користувача у системі",
 });
 export type RegisterPayload = z.infer<typeof RegisterSchema>;

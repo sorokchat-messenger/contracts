@@ -5,7 +5,7 @@ export const LoginSchema = NewUserSchema.pick({
   login: true,
   password: true,
 }).meta({
-  id: "LoginSchema",
+  id: "LoginPayload",
   description: "Данні для входу користувача у систему",
 });
 export type LoginPayload = z.infer<typeof LoginSchema>;
