@@ -3,6 +3,8 @@ import { ERROR_CODE } from "../common/index.js";
 const USER_ERROR: string = `${ERROR_CODE}.user`;
 const ERROR_LOGIN: string = `${USER_ERROR}.login`;
 const ERROR_PASSWORD: string = `${USER_ERROR}.password`;
+const ERROR_ID: string = `${USER_ERROR}.id`;
+export const ERROR_ROLE: string = `${USER_ERROR}.role`;
 
 const MIN_LENGTH: number = 8;
 const MAX_LENGTH: number = 100;
@@ -10,6 +12,10 @@ const MAX_LENGTH: number = 100;
 export const UserCodes = {
   NOT_FOUND: `${USER_ERROR}.not-found`,
   EXISTS: `${USER_ERROR}.exists`,
+  ID: {
+    NOT_INTEGER: `${ERROR_ID}.not-integer`,
+    NOT_POSITIVE: `${ERROR_ID}.not-positive`,
+  },
   LOGIN: {
     UNDEFINED: `${ERROR_LOGIN}.undefined`,
     EMPTY: `${ERROR_LOGIN}.empty`,
@@ -28,5 +34,8 @@ export const UserCodes = {
   },
   DISPLAY_NAME: {
     EMPTY: `${ERROR_PASSWORD}.empty`,
+  },
+  ROLE: {
+    INVALID: `${ERROR_ROLE}.invalid`,
   },
 } as const;
