@@ -1,5 +1,5 @@
-import { ChatRole } from "../chats/chat-role.js";
-import { Role } from "../users/role.js";
+import { ChatRole } from "../../chats/chat-role.js";
+import { Role } from "../../users/role.js";
 
 export class RoleHierarchy {
   private readonly map: Map<string, string[]>;
