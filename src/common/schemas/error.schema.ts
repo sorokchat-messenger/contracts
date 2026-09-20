@@ -1,4 +1,4 @@
-import { HttpStatus } from "@nestjs/common";
+import { HttpStatus } from "../http-status.js";
 import z from "zod";
 
 export const ErrorSchema = z

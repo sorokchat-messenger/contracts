@@ -1,5 +1,4 @@
-import { HttpStatus } from "@nestjs/common";
-import type { ErrorPayload } from "../common/index.js";
+import { type ErrorPayload, HttpStatus } from "../common/index.js";
 import { AuthorizationCodes } from "./codes.js";
 
 export const UNAUTHORIZED_ERROR: ErrorPayload = {
