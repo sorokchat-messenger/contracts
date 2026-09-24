@@ -3,6 +3,7 @@ import { ERROR_CODE } from "../common/index.js";
 const USER_ERROR: string = `${ERROR_CODE}.user`;
 const ERROR_LOGIN: string = `${USER_ERROR}.login`;
 const ERROR_PASSWORD: string = `${USER_ERROR}.password`;
+const ERROR_DISPLAY_NAME: string = `${USER_ERROR}.display-name`;
 const ERROR_ID: string = `${USER_ERROR}.id`;
 export const ERROR_ROLE: string = `${USER_ERROR}.role`;
 
@@ -33,7 +34,7 @@ export const UserCodes = {
     },
   },
   DISPLAY_NAME: {
-    EMPTY: `${ERROR_PASSWORD}.empty`,
+    EMPTY: `${ERROR_DISPLAY_NAME}.empty`,
   },
   ROLE: {
     INVALID: `${ERROR_ROLE}.invalid`,
