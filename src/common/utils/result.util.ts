@@ -1,4 +1,6 @@
-type ErrorState<E> = {
+import type { ErrorPayload } from "../schemas/index.js";
+
+type ErrorState<E extends ErrorPayload = ErrorPayload> = {
     success: false;
     error: E;
 }
@@ -8,17 +10,17 @@ type SuccessState<D> = {
     data: D;
 }
 
-type ResultState<D, E> = SuccessState<D> | ErrorState<E>;
+type ResultState<D, E extends ErrorPayload = ErrorPayload> = SuccessState<D> | ErrorState<E>;
 
 
-export class Result<D, E> {
+export class Result<D, E extends ErrorPayload = ErrorPayload> {
     private constructor(private state: ResultState<D, E>) { }
 
-    public static ok<D, E = never>(data: D): Result<D, E> {
+    public static ok<D, E extends ErrorPayload = never>(data: D): Result<D, E> {
         return new Result({ success: true, data });
     }
 
-    public static fail<E, D = never>(error: E): Result<D, E> {
+    public static fail<E extends ErrorPayload = ErrorPayload, D = never>(error: E): Result<D, E> {
         return new Result({ success: false, error });
     }
 
