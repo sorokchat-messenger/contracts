@@ -4,8 +4,7 @@ import z from "zod";
 
 export const ChatSchema = NewChatSchema.extend({
     id: z
-        .int({ error: ChatsCodes.ID.NOT_INTEGER })
-        .positive({ error: ChatsCodes.ID.NOT_POSITIVE })
+        .uuidv7({ error: ChatsCodes.ID.INCORRECT })
         .meta({
             description: "Унікальний ідентифікатор чату",
             example: 1,

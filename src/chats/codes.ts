@@ -9,8 +9,7 @@ export const DESCRIPTION_ERROR_CODE: string = `${ERROR_CHATS_CODE}.description`;
 export const ChatsCodes = {
     NOT_FOUND: `${ERROR_CHATS_CODE}.not-found`,
     ID: {
-        NOT_INTEGER: `${ID_ERROR_CODE}.not-integer`,
-        NOT_POSITIVE: `${ID_ERROR_CODE}.not-positive`
+        INCORRECT: `${ID_ERROR_CODE}.incorrect`
     },
     NAME: {
         UNDEFINED: `${NAME_ERROR_CODE}.undefined`,
