@@ -22,6 +22,8 @@ export const ChatsCodes = {
     PARTICIPANT: {
         NOT_FOUND: `${PARTICIPANT_ERROR_CODE}.not-found`,
         NOT_ADMIN: `${PARTICIPANT_ERROR_CODE}.not-admin`,
-        NOT_SELF: `${PARTICIPANT_ERROR_CODE}.not-self`
+        NOT_SELF: `${PARTICIPANT_ERROR_CODE}.not-self`,
+        EXISTS: `${PARTICIPANT_ERROR_CODE}.exists`,
+        LAST_ADMIN: `${PARTICIPANT_ERROR_CODE}.last-admnin`,
     }
 } as const;
