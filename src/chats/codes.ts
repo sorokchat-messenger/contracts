@@ -5,6 +5,7 @@ export const ERROR_CHATS_CODE: string = `${ERROR_CODE}.${CHATS_CODE}`;
 export const ID_ERROR_CODE: string = `${ERROR_CHATS_CODE}.id`;
 export const NAME_ERROR_CODE: string = `${ERROR_CHATS_CODE}.name`;
 export const DESCRIPTION_ERROR_CODE: string = `${ERROR_CHATS_CODE}.description`;
+export const PARTICIPANT_ERROR_CODE: string = `${ERROR_CHATS_CODE}.participant`;
 
 export const ChatsCodes = {
     NOT_FOUND: `${ERROR_CHATS_CODE}.not-found`,
@@ -17,5 +18,10 @@ export const ChatsCodes = {
     },
     DESCRIPTION: {
         EMPTY: `${DESCRIPTION_ERROR_CODE}.empty`
+    },
+    PARTICIPANT: {
+        NOT_FOUND: `${PARTICIPANT_ERROR_CODE}.not-found`,
+        NOT_ADMIN: `${PARTICIPANT_ERROR_CODE}.not-admin`,
+        NOT_SELF: `${PARTICIPANT_ERROR_CODE}.not-self`
     }
 } as const;
