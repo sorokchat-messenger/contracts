@@ -14,8 +14,7 @@ export const UserCodes = {
   NOT_FOUND: `${USER_ERROR}.not-found`,
   EXISTS: `${USER_ERROR}.exists`,
   ID: {
-    NOT_INTEGER: `${ERROR_ID}.not-integer`,
-    NOT_POSITIVE: `${ERROR_ID}.not-positive`,
+    INCORRECT: `${ERROR_ID}.incorrect`,
   },
   LOGIN: {
     UNDEFINED: `${ERROR_LOGIN}.undefined`,
