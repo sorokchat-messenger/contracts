@@ -7,7 +7,7 @@ export const ChatSchema = NewChatSchema.extend({
         .uuidv7({ error: ChatsCodes.ID.INCORRECT })
         .meta({
             description: "Унікальний ідентифікатор чату",
-            example: 1,
+            example: "019318b2-3e77-7823-9b21-4f1122334455",
         }),
 }).meta({ id: "ChatPayload", description: "Повна інформація про чат" });
 export type ChatPayload = z.infer<typeof ChatSchema>;

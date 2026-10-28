@@ -7,11 +7,10 @@ export const UserSchema = NewUserSchema.omit({ password: true })
   .required()
   .extend({
     id: z
-      .int({ error: UserCodes.ID.NOT_INTEGER })
-      .positive({ error: UserCodes.ID.NOT_POSITIVE })
+      .uuidv7({ error: UserCodes.ID.INCORRECT })
       .meta({
         description: "Унікальний ідентифікатор користувача",
-        example: 1,
+        example: "019318b2-3e77-7823-9b21-4f1122334455",
       }),
     role: z.enum(Role, { error: UserCodes.ROLE.INVALID }).meta({
       description: "Роль користувача",
