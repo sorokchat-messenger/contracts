@@ -20,5 +20,5 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "exclude": ["prettierrc.config.mts"]
+  "exclude": ["prettierrc.config.mts", "dist"]
 }

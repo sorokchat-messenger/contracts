@@ -41,7 +41,8 @@
   },
   "devDependencies": {
     "@sorokchat-messenger/core": "^1.0.0",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "@vitest/coverage-v8": "^5.0.1",
